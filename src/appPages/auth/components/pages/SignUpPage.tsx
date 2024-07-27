@@ -1,6 +1,7 @@
 'use client';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useRegisterMutation } from '@/redux/api/auth';
+import Link from 'next/link';
 
 interface IFormInput {
 	username: string;
@@ -53,6 +54,7 @@ const SignUpPage = () => {
 				<input placeholder="photo URL" type="text" {...register('photo')} />
 				<button type="submit">Register</button>
 			</form>
+			<Link href="/auth/sign-in">У вас уже есть аккаунт?</Link>
 		</section>
 	);
 };
