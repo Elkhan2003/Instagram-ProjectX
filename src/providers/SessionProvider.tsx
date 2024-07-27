@@ -14,7 +14,7 @@ export const SessionProvider: FC<SessionProviderProps> = ({ children }) => {
 
 	const handleRefreshToken = async () => {
 		const localStorageData = JSON.parse(localStorage.getItem('tokens')!);
-		if (localStorageData === 'undefined') {
+		if (localStorageData === 'undefined' || localStorageData === undefined) {
 			localStorage.removeItem('tokens');
 		}
 		if (localStorageData) {
